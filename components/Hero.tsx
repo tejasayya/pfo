@@ -81,7 +81,7 @@ const Hero = () => {
                         text="TEJA SAYYA"
                         duration={1000} // scramble completes in 1 second
                         delay={0}
-                        characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]\:;?><,./-="
+                        characters="!@#$%^&*()_+~`|}{[]\:;?><,./-="
                         key={Date.now()} // force a fresh animation on hover
                     />
                     ) : (
