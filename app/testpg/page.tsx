@@ -157,6 +157,9 @@ import CircularText from './CircularText';
 import Image from 'next/image';
 import ScrollVelocity from './ScrollVelocity';
 import { motion } from 'framer-motion';
+import React from "react";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Link from "next/link";
 
 export default function TestPage() {
   const sections = [
@@ -200,6 +203,8 @@ export default function TestPage() {
         </ul>
       </nav>
 
+      
+      
       {/* Main Content Container */}
       <div className="relative z-10 container mx-auto px-4 py-20 pt-32">
 
@@ -238,31 +243,21 @@ export default function TestPage() {
             <CircularText
               text="TEJA*SWAROOP*SAYYA*"
               spinDuration={30}
-              className="w-64 h-64 md:w-80 md:h-80"
+              className="w-64 h-64 md:w-30 md:h-30"
             />
           </div>
         </section>
 
-        {/* Education Section */}
-        <section id="education" className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8">Education</h2>
-          <div className="space-y-6">
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-xl text-blue-400 mb-2">Masters of Science, Computer Science</h3>
-              <p className="text-gray-300">University of North Carolina at Charlotte | GPA: 4.0/4.0</p>
-              <p className="text-gray-400 text-sm">Expected May 2025</p>
-            </div>
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-xl text-blue-400 mb-2">Bachelors of Technology, Computer Science</h3>
-              <p className="text-gray-300">Jawaharlal Nehru Technological University | CGPA: 9/10</p>
-              <p className="text-gray-400 text-sm">Graduated June 2021</p>
-            </div>
+          <div className="absolute ">
+
           </div>
-        </section>
+
+
+        
 
         {/* Experience Section */}
         <section id="experience" className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8">Professional Experience</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Professional Experience</h2>
           <div className="space-y-8">
             {/* Add similar structured divs for each experience */}
             <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
@@ -280,38 +275,293 @@ export default function TestPage() {
 
         {/* Skills Section */}
         <section id="skills" className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8">Technical Skills</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            
             <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3">Programming</h3>
+              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
               <div className="flex flex-wrap gap-2">
                 {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm">
+                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
+
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+
+
             {/* Add other skill categories similarly */}
           </div>
         </section>
 
+
+
+        <section id="skills" className="mb-20">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-blue-400 mb-3 text-center">AWS</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            
+            
+
+
+            {/* Add other skill categories similarly */}
+          </div>
+        </section>
+
+
+
+
         {/* Projects Section */}
         <section id="projects" className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8">Projects & Research</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Projects & Research</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
             <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              
+              <CardContainer className='inter-var'>
+                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border  ">
+                  <CardItem translateZ="50"
+                    className="text-xl font-bold text-neutral-600 dark:text-white"
+                  >
+                    Make things float in air
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  >
+                    <Image src={"https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} width={500} height={500}>
+
+                    </Image>
+                  
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  >
+                    Hover over this card to unleash the power of CSS perspective
+                  </CardItem>
+                  <div className="flex justify-between items-center mt-20">
+                    <CardItem
+                      translateZ={20}
+                      as={Link}
+                      href="https://twitter.com/mannupaaji"
+                      target="__blank"
+                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                    >
+                      Github 🔗
+                    </CardItem>
+                    <CardItem
+                      translateZ={20}
+                      as="button"
+                      className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                    >
+                      Deployed 🔗
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>
+            
               <h3 className="text-xl text-blue-400 mb-2">Chat with Teja Sayya | RAG</h3>
               <p className="text-gray-300 mb-4">Built a RAG-based AI agent using LLM functionality</p>
               <a href="#" className="text-blue-400 hover:text-blue-300">View Project</a>
             </div>
+            
+            
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              
+              <CardContainer className='inter-var'>
+                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border  ">
+                  <CardItem translateZ="50"
+                    className="text-xl font-bold text-neutral-600 dark:text-white"
+                  >
+                    Make things float in air
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  >
+                    Hover over this card to unleash the power of CSS perspective
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  >
+                    Hover over this card to unleash the power of CSS perspective
+                  </CardItem>
+                  <div className="flex justify-between items-center mt-20">
+                    <CardItem
+                      translateZ={20}
+                      as={Link}
+                      href="https://twitter.com/mannupaaji"
+                      target="__blank"
+                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                    >
+                      Try now →
+                    </CardItem>
+                    <CardItem
+                      translateZ={20}
+                      as="button"
+                      className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                    >
+                      Sign up
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>
+            
+              <h3 className="text-xl text-blue-400 mb-2">Chat with Teja Sayya | RAG</h3>
+              <p className="text-gray-300 mb-4">Built a RAG-based AI agent using LLM functionality</p>
+              <a href="#" className="text-blue-400 hover:text-blue-300">View Project</a>
+            </div>
+
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              
+              <CardContainer className='inter-var'>
+                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border  ">
+                  <CardItem translateZ="50"
+                    className="text-xl font-bold text-neutral-600 dark:text-white"
+                  >
+                    Make things float in air
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  >
+                    Hover over this card to unleash the power of CSS perspective
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  >
+                    Hover over this card to unleash the power of CSS perspective
+                  </CardItem>
+                  <div className="flex justify-between items-center mt-20">
+                    <CardItem
+                      translateZ={20}
+                      as={Link}
+                      href="https://twitter.com/mannupaaji"
+                      target="__blank"
+                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                    >
+                      Try now →
+                    </CardItem>
+                    <CardItem
+                      translateZ={20}
+                      as="button"
+                      className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                    >
+                      Sign up
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>
+            
+              <h3 className="text-xl text-blue-400 mb-2">Chat with Teja Sayya | RAG</h3>
+              <p className="text-gray-300 mb-4">Built a RAG-based AI agent using LLM functionality</p>
+              <a href="#" className="text-blue-400 hover:text-blue-300">View Project</a>
+            </div>
+
+
             {/* Add other projects similarly */}
           </div>
         </section>
 
+
+        {/* Education Section */}
+        <section id="education" className="mb-20">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Education</h2>
+          <div className="space-y-6">
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-xl text-blue-400 mb-2 text-center">Masters of Science, Computer Science</h3>
+              <p className="text-gray-300 text-center">University of North Carolina at Charlotte | GPA: 4.0/4.0</p>
+              <p className="text-gray-400 text-sm text-center">Expected May 2025</p>
+            </div>
+            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-xl text-blue-400 mb-2 text-center">Bachelors of Technology, Computer Science</h3>
+              <p className="text-gray-300 text-center">Jawaharlal Nehru Technological University | CGPA: 9/10</p>
+              <p className="text-gray-400 text-sm text-center">Graduated June 2021</p>
+            </div>
+          </div>
+        </section>
+
+
+
         {/* Contact Section */}
         <section id="contact" className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8">Contact</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Contact</h2>
           <div className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm max-w-2xl mx-auto">
             <form className="space-y-6">
               <div>
@@ -332,6 +582,15 @@ export default function TestPage() {
               </button>
             </form>
           </div>
+
+          <div className="relative">
+          <CircularText
+            text="TEJA*SWAROOP*SAYYA*"
+            spinDuration={30}
+            className="w-64 h-64 md:w-30 md:h-30"
+          />
+          </div>
+
         </section>
       </div>
     </div>
