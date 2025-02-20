@@ -160,6 +160,10 @@ import { motion } from 'framer-motion';
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
+import Expcomp from './components/Expcomp';
+import details from './details.json';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
 
 export default function TestPage() {
   const sections = [
@@ -259,98 +263,37 @@ export default function TestPage() {
         <section id="experience" className="mb-20">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Professional Experience</h2>
           <div className="space-y-8">
-            {/* Add similar structured divs for each experience */}
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-xl text-blue-400 mb-2">Open Source Developer</h3>
-              <p className="text-gray-400 text-sm mb-4">June 2023 - Present</p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-300">
-                <li>Collaborated on backend improvements for Rocket.Chat and FitCheck App</li>
-                <li>Optimized database queries and API integrations</li>
-                <li>Contributed to TensorFlow Addons repository</li>
-              </ul>
-            </div>
-            {/* Add other experiences following same pattern */}
+            <Expcomp role={"Software Engineer"} tenure={"Time"} descriptions={"edho okati raa"}/>
+            {details.Experience.map(exp => (
+              <Expcomp role={exp.role} tenure={exp.tenure} descriptions={exp.descriptions}/>
+            ))}
           </div>
         </section>
+
+        
 
         {/* Skills Section */}
         <section id="skills" className="mb-20">
+          {/* Heading */}
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
+          {/* Avatar Images */}
+          <div className="flex justify-center items-center space-x-6 mb-6">
+            <Image className="w-16 h-16 rounded-full" src={details.spring} width={64} height={64} alt="Spring"/>
+            <Image className="w-16 h-16 rounded-full" src={details.react} width={64} height={64} alt="React"/>
+            <Image className="w-16 h-16 rounded-full" src={details.next} width={64} height={64} alt="Next.js"/>
+            <Image className="w-16 h-16 rounded-full" src={details.mongo} width={64} height={64} alt="MongoDB"/>
+            <Image className="w-16 h-16 rounded-full" src={details.dsa} width={64} height={64} alt="DSA"/>
+            <Image className="w-16 h-16 rounded-full" src={details.sd} width={64} height={64} alt="Software Development"/>
+          </div>
+
+
+          {/* Skills Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3 text-center">Programming</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-
-
-            {/* Add other skill categories similarly */}
+            {details.Skills.map(skk => (
+              <Skills key={skk.title} title={skk.title} sk={skk.sk} />
+            ))}
           </div>
         </section>
-
-
 
         <section id="skills" className="mb-20">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
@@ -359,17 +302,13 @@ export default function TestPage() {
             <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
               <h3 className="text-blue-400 mb-3 text-center">AWS</h3>
               <div className="flex flex-wrap gap-2">
-                {['Java', 'Python', 'JavaScript', 'DSA'].map(skill => (
+                {['MongoDB', 'AWS', 'Huggingface', 'DSA'].map(skill => (
                   <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
-
-            
-            
-
 
             {/* Add other skill categories similarly */}
           </div>
@@ -381,161 +320,12 @@ export default function TestPage() {
         {/* Projects Section */}
         <section id="projects" className="mb-20">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Projects & Research</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              
-              <CardContainer className='inter-var'>
-                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border  ">
-                  <CardItem translateZ="50"
-                    className="text-xl font-bold text-neutral-600 dark:text-white"
-                  >
-                    Make things float in air
-                  </CardItem>
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                  >
-                    <Image src={"https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} width={500} height={500}>
-
-                    </Image>
-                  
-                  </CardItem>
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                  >
-                    Hover over this card to unleash the power of CSS perspective
-                  </CardItem>
-                  <div className="flex justify-between items-center mt-20">
-                    <CardItem
-                      translateZ={20}
-                      as={Link}
-                      href="https://twitter.com/mannupaaji"
-                      target="__blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                    >
-                      Github 🔗
-                    </CardItem>
-                    <CardItem
-                      translateZ={20}
-                      as="button"
-                      className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                    >
-                      Deployed 🔗
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
             
-              <h3 className="text-xl text-blue-400 mb-2">Chat with Teja Sayya | RAG</h3>
-              <p className="text-gray-300 mb-4">Built a RAG-based AI agent using LLM functionality</p>
-              <a href="#" className="text-blue-400 hover:text-blue-300">View Project</a>
-            </div>
-            
-            
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              
-              <CardContainer className='inter-var'>
-                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border  ">
-                  <CardItem translateZ="50"
-                    className="text-xl font-bold text-neutral-600 dark:text-white"
-                  >
-                    Make things float in air
-                  </CardItem>
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                  >
-                    Hover over this card to unleash the power of CSS perspective
-                  </CardItem>
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                  >
-                    Hover over this card to unleash the power of CSS perspective
-                  </CardItem>
-                  <div className="flex justify-between items-center mt-20">
-                    <CardItem
-                      translateZ={20}
-                      as={Link}
-                      href="https://twitter.com/mannupaaji"
-                      target="__blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                    >
-                      Try now →
-                    </CardItem>
-                    <CardItem
-                      translateZ={20}
-                      as="button"
-                      className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                    >
-                      Sign up
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
-            
-              <h3 className="text-xl text-blue-400 mb-2">Chat with Teja Sayya | RAG</h3>
-              <p className="text-gray-300 mb-4">Built a RAG-based AI agent using LLM functionality</p>
-              <a href="#" className="text-blue-400 hover:text-blue-300">View Project</a>
-            </div>
+            {details.Projects.map(prj => (
+              <Projects title={prj.title} img={prj.img} imgw={prj.imgw} imgh={prj.imgh} descrip={prj.descrip} code={prj.code} live={prj.live}/>                
+            ))}
 
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              
-              <CardContainer className='inter-var'>
-                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border  ">
-                  <CardItem translateZ="50"
-                    className="text-xl font-bold text-neutral-600 dark:text-white"
-                  >
-                    Make things float in air
-                  </CardItem>
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                  >
-                    Hover over this card to unleash the power of CSS perspective
-                  </CardItem>
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                  >
-                    Hover over this card to unleash the power of CSS perspective
-                  </CardItem>
-                  <div className="flex justify-between items-center mt-20">
-                    <CardItem
-                      translateZ={20}
-                      as={Link}
-                      href="https://twitter.com/mannupaaji"
-                      target="__blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                    >
-                      Try now →
-                    </CardItem>
-                    <CardItem
-                      translateZ={20}
-                      as="button"
-                      className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                    >
-                      Sign up
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
-            
-              <h3 className="text-xl text-blue-400 mb-2">Chat with Teja Sayya | RAG</h3>
-              <p className="text-gray-300 mb-4">Built a RAG-based AI agent using LLM functionality</p>
-              <a href="#" className="text-blue-400 hover:text-blue-300">View Project</a>
-            </div>
-
-
-            {/* Add other projects similarly */}
           </div>
         </section>
 
