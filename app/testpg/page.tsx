@@ -1,156 +1,3 @@
-// "use client"
-// // app/testpg/page.tsx
-
-
-// import Particles from './Particles';
-// import CircularText from './CircularText';
-// import Image from 'next/image';
-// import ScrollVelocity from './ScrollVelocity';
-
-
-// export default function TestPage() {
-    
-
-//     return (
-//       <div className="min-h-screen flex items-center justify-center bg-black relative">
-        
-//         <div style={{ width: '100%', height: '900px', position: 'relative' }}>
-//             <Particles
-//                 particleColors={['#ffffff', '#ffffff']}
-//                 particleCount={500}
-//                 particleSpread={10}
-//                 speed={0.1}
-//                 particleBaseSize={100}
-//                 moveParticlesOnHover={true}
-//                 alphaParticles={false}
-//                 disableRotation={false}
-//             />
-
-
-//         </div>
-
-//         {/**Nav Bar . Contains Education, Experience, Skills, Projects, Coding Profiles, Contact */}
-//         <div className="absolute top-0 left-0 w-full p-7 rounded-xl" style={{
-//             backgroundColor: 'rgba(36, 37, 38, 0.95)'
-//         }}>
-//             <ul className="flex items-center justify-center gap-6">
-//           <li>
-//             <a href="#experience" className="text-white hover:text-gray-300">
-//               Experience
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#education" className="text-white hover:text-gray-300">
-//               Education
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#skills" className="text-white hover:text-gray-300">
-//               Skills
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#projects" className="text-white hover:text-gray-300">
-//               Projects
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#coding-profiles" className="text-white hover:text-gray-300">
-//               Coding Profiles
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#contact" className="text-white hover:text-gray-300">
-//               Contact
-//             </a>
-//           </li>
-//         </ul>
-
-
-//         </div>
-        
-               
-
-//         <div className="absolute top-[120px] left-[20px] z-20">
-//         <CircularText
-//           text="TEJA*SWAROOP*SAYYA*"
-//           onHover="speedUp"
-//           spinDuration={30}
-//           className="custom-class"
-//         />
-//       </div>
-
-
-
-
-
-//       {/* New content container with a noisy, transparent grey background */}
-//       <div
-//         className="absolute top-[340px] z-30 p-6 rounded-lg max-w-md items-center justify-center"
-//         style={{
-//           backgroundColor: 'rgba(36, 37, 38, 0.95)',
-//           backgroundImage:
-//             "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')",
-//         }}
-//       >
-//         <div className="flex flex-col md:flex-row items-center">
-//           {/* Photo container */}
-//             <Image
-//               src="https://github.com/tejasayya/pfo/blob/main/public/pik.jpg"
-//               alt="Your Photo"
-//               className="object-cover w-full h-full"
-//               width={128}
-//               height={128}
-//             />
-            
-//           </div>
-//           {/* Text container */}
-//           <div className="mt-4 md:mt-0 md:ml-4">
-//             <h2 className="text-white text-2xl font-bold text-center justify-center">
-//               Hello!
-//             </h2>
-//             <h2 className="text-white text-2xl font-bold text-center">
-//               Welcome to my Space
-//             </h2>
-//             <p className="mt-2 text-gray-300 text-sm">
-//               A short about myself: Lorem ipsum dolor sit amet, consectetur
-//               adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-//               dolore magna aliqua.
-//             </p>
-//           </div>
-//         </div>
-
-
-
-//         <div className="absolute top-[600px] left-[20px] z-20"> 
-//         <ScrollVelocity
-//             texts={['Software Engineer |', 'Full Stack Developer |', 'Java Developer |']} 
-//             velocity={90} 
-//             className="custom-scroll-text"
-//         />
-//         </div>
-
-
-
-//         </div>
-
-
-        
-        
-
-
-
-
-//     );
-//   }
-
-
-
-
-////////////////////////////////
-
-
-
 "use client"
 import Particles from './Particles';
 import CircularText from './CircularText';
@@ -164,6 +11,8 @@ import Expcomp from './components/Expcomp';
 import details from './details.json';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import CustomizedTimeline from './CostamizedTimeline';
+import Typography from '@mui/material/Typography';
 
 export default function TestPage() {
   const sections = [
@@ -220,17 +69,23 @@ export default function TestPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h3 className="text-xl md:text-xl text-white  text-center">
+                Hello! I'm
+              </h3>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
                 Teja Swaroop Sayya
               </h1>
-              <ScrollVelocity
-                texts={['Software Engineer |', 'Full Stack Developer |', 'AI/ML Engineer |']} 
-                velocity={90}
-                className="text-xl md:text-2xl text-blue-400 mb-6"
-              />
-              <div className="text-gray-300 space-y-2">
+              <h3 className="text-xl md:text-xl text-white font-bold text-center">
+                Welcome to my Space
+              </h3>
+              
+              <div className="text-gray-300 space-y-2 border rounded-lg mt-10 text-center bg-gray-900/50 backdrop-blur-sm">
+                <Typography variant="h9" component="span" className='text-white'>
+                Hi, I'm a Software Engineer and Open-Source Developer specializing in building web applications and processing big data. I use Spring Boot, NodeJS, ReactJS, NextJS, ExpressJS, PySpark, and MongoDB to transform imaginative ideas into cutting-edge applications.
+                </Typography>
                 <p>+1 (980) 230 4200</p>
                 <p>teja.sayya108@gmail.com</p>
+
                 <div className="flex gap-4 mt-4">
                   <a href="https://linkedin.com/in/teja-sayya/" target="_blank" className="hover:text-blue-400">
                     LinkedIn
@@ -239,35 +94,64 @@ export default function TestPage() {
                     LeetCode
                   </a>
                 </div>
+                {/* <div className="absolute left-[20px] z-20 text-white max-w-7xl pt-10">
+                <ScrollVelocity
+                  texts={['Software Engineer | Full Stack Dev | AI/ML']} 
+                  velocity={90}
+                  className="text-xl md:text-2xl text-white mb-6"
+                  />
+              </div> */}
               </div>
             </motion.div>
           </div>
 
-          <div className="md:w-1/2 flex justify-center">
+          <div className="md:w-1/2 flex justify-center p-2">
+            <Image src={"https://raw.githubusercontent.com/tejasayya/pfo/refs/heads/main/public/pik.jpg"} 
+            width={200} height={200}
+            className="rounded-lg"
+            alt="Profile"
+            />
+
+          </div>
+
+          {/* <div className="md:w-1/2 flex justify-center">
             <CircularText
               text="TEJA*SWAROOP*SAYYA*"
               spinDuration={30}
               className="w-64 h-64 md:w-30 md:h-30"
             />
-          </div>
+          </div> */}
+          {/* <div className="absolute left-[20px] z-20 text-white max-w-7xl"> 
+          <ScrollVelocity
+              texts={['Software Engineer |', 'Full Stack Developer |', 'Java Developer |']} 
+              velocity={90} 
+              className="custom-scroll-text"
+          />
+          </div> */}
         </section>
-
-          <div className="absolute ">
-
-          </div>
-
-
+        <ScrollVelocity
+        texts={['Software Engineer | Full Stack Dev | AI/ML']} 
+        velocity={90}
+        className="text-xl md:text-2xl text-white mb-20"
+        />
         
 
         {/* Experience Section */}
         <section id="experience" className="mb-20">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Professional Experience</h2>
+          
+          <div>
+            <CustomizedTimeline />
+          </div>
+
           <div className="space-y-8">
-            <Expcomp role={"Software Engineer"} tenure={"Time"} descriptions={"edho okati raa"}/>
+            {/* <Expcomp role={"Software Engineer"} tenure={"Time"} descriptions={"edho okati raa"}/> */}
             {details.Experience.map(exp => (
               <Expcomp role={exp.role} tenure={exp.tenure} descriptions={exp.descriptions}/>
             ))}
           </div>
+
+
         </section>
 
         

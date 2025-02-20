@@ -46,7 +46,7 @@ const Expcomp: React.FC<ExpcompProps> = ({ role, tenure, descriptions }) => {
           ) : (
             <li>{String(descriptions)}</li>
           )}
-          <li>End Test</li>
+          {/* <li>End Test</li> */}
         </ul>
       </div>
     </div>
