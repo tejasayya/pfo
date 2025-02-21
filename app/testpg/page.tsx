@@ -14,6 +14,8 @@ import Skills from './components/Skills';
 import CustomizedTimeline from './components/CostamizedTimeline';
 import Typography from '@mui/material/Typography';
 import TextScramble from '@/components/TextScramble';
+import { FaSquareGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
 
 export default function TestPage() {
   const sections = [
@@ -134,6 +136,25 @@ export default function TestPage() {
               </div>
             </div>
           </motion.div>
+          <div className="flex justify-center gap-6 mt-8">
+            <a 
+              href="https://github.com/tejasayya" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-500 transition-colors duration-300"
+            >
+              <FaSquareGithub className="text-4xl md:text-5xl" />
+            </a>
+            <a 
+              href="https://linkedin.com/in/teja-sayya" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-500 transition-colors duration-300"
+            >
+              <FaLinkedin className="text-4xl md:text-5xl" />
+              
+            </a>
+          </div>
         </div>
 
         <div className="w-full md:w-1/2 flex justify-center p-2">
@@ -168,8 +189,8 @@ export default function TestPage() {
 
           <div className="space-y-8">
             {/* <Expcomp role={"Software Engineer"} tenure={"Time"} descriptions={"edho okati raa"}/> */}
-            {details.Experience.map(exp => (
-              <Expcomp role={exp.role} tenure={exp.tenure} descriptions={exp.descriptions}/>
+            {details.Experience.map( (exp, idx) => (
+              <Expcomp key={idx} role={exp.role} tenure={exp.tenure} descriptions={exp.descriptions}/>
             ))}
           </div>
 
@@ -202,33 +223,31 @@ export default function TestPage() {
         </section>
 
         {/* Certification section */}
-        <section id="skills" className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-            <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-blue-400 mb-3 text-center">AWS</h3>
-              <div className="flex flex-wrap gap-2">
-                {['MongoDB', 'AWS', 'Huggingface', 'DSA'].map(skill => (
-                  <span key={skill} className="px-3 py-1 bg-blue-900/30 rounded-full text-sm text-white">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+        
 
-            {/* Add other skill categories similarly */}
+        <section id="projects" className="mb-20">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-1 items-center justify-center">
+            {details.certi.map((cti, idx) => (
+              <div key={idx} className="flex justify-center">
+                <a 
+                  href={cti[1]} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block hover:opacity-80 transition-opacity"
+                >
+                  <Image 
+                    src={cti[0]}
+                    width={150}
+                    height={150}
+                    alt={`Certification ${idx + 1}`}
+                    className="mx-auto cursor-pointer"
+                  />
+                </a>
+              </div>
+            ))}                        
           </div>
         </section>
-
-        {/* <section id="projects" className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-            
-            
-
-          </div>
-        </section> */}
 
 
 
@@ -240,8 +259,8 @@ export default function TestPage() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Projects & Research</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
             
-            {details.Projects.map(prj => (
-              <Projects title={prj.title} img={prj.img} imgw={prj.imgw} imgh={prj.imgh} descrip={prj.descrip} code={prj.code} live={prj.live}/>                
+            {details.Projects.map( (prj, idx) => (
+              <Projects key={idx} title={prj.title} img={prj.img} imgw={prj.imgw} imgh={prj.imgh} descrip={prj.descrip} code={prj.code} live={prj.live}/>                
             ))}
 
           </div>
