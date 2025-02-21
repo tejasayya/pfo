@@ -23,7 +23,7 @@ export default function TestPage() {
     { id: 'education', title: 'Education' },
     { id: 'skills', title: 'Skills' },
     { id: 'projects', title: 'Projects' },
-    { id: 'coding-profiles', title: 'Coding Profiles' },
+    { id: 'certifications', title: 'Certifications' },
     { id: 'contact', title: 'Contact' }
   ];
 
@@ -203,7 +203,7 @@ export default function TestPage() {
         <section id="skills" className="mb-20">
           {/* Heading */}
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
-          {/* Avatar Images */}
+          {/* Images */}
           <div className="flex justify-center items-center space-x-6 mb-6">
             <Image className="w-16 h-16 rounded-full" src={details.spring} width={64} height={64} alt="Spring"/>
             <Image className="w-16 h-16 rounded-full" src={details.react} width={64} height={64} alt="React"/>
@@ -225,7 +225,7 @@ export default function TestPage() {
         {/* Certification section */}
         
 
-        <section id="projects" className="mb-20">
+        <section id="certifications" className="mb-20">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-1 items-center justify-center">
             {details.certi.map((cti, idx) => (
@@ -271,15 +271,40 @@ export default function TestPage() {
         <section id="education" className="mb-20">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Education</h2>
           <div className="space-y-6">
+            {/* Masters Degree */}
             <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-xl text-blue-400 mb-2 text-center">Masters of Science, Computer Science</h3>
-              <p className="text-gray-300 text-center">University of North Carolina at Charlotte | GPA: 4.0/4.0</p>
-              <p className="text-gray-400 text-sm text-center">Expected May 2025</p>
+              <div className="flex items-center justify-center gap-6">
+                <div className="flex-1">
+                  <h3 className="text-xl text-blue-400 mb-2 text-center">Masters of Science, Computer Science</h3>
+                  <p className="text-gray-300 text-center mb-2">University of North Carolina at Charlotte | GPA: 4.0/4.0</p>
+                  <p className="text-gray-400 text-sm text-center">Expected May 2025</p>
+                </div>
+                <Image 
+                  className="w-24 h-24 rounded-full border-2 border-blue-400 p-1" 
+                  src={details.clt} 
+                  width={96} 
+                  height={96} 
+                  alt="UNCC Logo"
+                />
+              </div>
             </div>
+
+            {/* Bachelors Degree */}
             <div className="bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
-              <h3 className="text-xl text-blue-400 mb-2 text-center">Bachelors of Technology, Computer Science</h3>
-              <p className="text-gray-300 text-center">Jawaharlal Nehru Technological University | CGPA: 9/10</p>
-              <p className="text-gray-400 text-sm text-center">Graduated June 2021</p>
+              <div className="flex items-center justify-center gap-6">
+                <div className="flex-1">
+                  <h3 className="text-xl text-blue-400 mb-2 text-center">Bachelors of Technology, Computer Science</h3>
+                  <p className="text-gray-300 text-center mb-2">Jawaharlal Nehru Technological University | CGPA: 9/10</p>
+                  <p className="text-gray-400 text-sm text-center">Graduated June 2021</p>
+                </div>
+                <Image 
+                  className="w-24 h-24 rounded-full border-2 border-blue-400 p-1" 
+                  src={details.jntu} 
+                  width={96} 
+                  height={96} 
+                  alt="JNTU Logo"
+                />
+              </div>
             </div>
           </div>
         </section>
